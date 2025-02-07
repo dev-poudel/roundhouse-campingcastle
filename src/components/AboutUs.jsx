@@ -41,20 +41,7 @@ const Aboutus = () => {
 
    </div>
    </div>
-   {/* <section className="py-10 rounded-3xl h-6 mt-6 ml-32 bg-[#295757] w-[77rem] text-center items-center justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {['Breakfast included', 'Swimming pool', 'Fast Wi-Fi', 'Spa & Wellness'].map((amenity) => (
-              <div key={amenity} className="flex items-center  p-4  rounded-lg ">
-                
-                <span className="text-white font-bold text-lg">{amenity}</span>
-                <FaStar/>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
+ 
      
   <section className="py-6 rounded-xl mt-6 mx-auto bg-[#295757] w-[83%] text-center">
         <div className="grid grid-cols-2  md:grid-cols-2 lg:grid-cols-4  sm:grid-cols-4 gap-6 font-playfairi text-white">

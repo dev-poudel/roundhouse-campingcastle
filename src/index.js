@@ -5,8 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider} from "react-router-dom"
 import AboutUs from './components/AboutUs';
-import ResturantsMenu from './pages/ResturantsMenu';
-import PhotoGallery from './pages/PhotoGallery';
+import ResturantsMenu from './pages/resturant/ResturantsMenu';
+import PhotoGallery from './pages/resturant/PhotoGallery';
+import Review from './components/Review';
+import Offer from './components/Offer';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,6 +16,8 @@ const router = createBrowserRouter(
       <Route path='/about' element={<AboutUs/>}/>
       <Route path='/menu' element={<ResturantsMenu/>}/>
       <Route path='/gallery' element={<PhotoGallery/>}/>
+      <Route path='/review' element={<Review/>}/>
+      <Route path='/offer' element={<Offer/>}/>
 
     </Route>
   )

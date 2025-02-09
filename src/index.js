@@ -8,7 +8,8 @@ import AboutUs from './components/AboutUs';
 import ResturantsMenu from './pages/resturant/ResturantsMenu';
 import PhotoGallery from './pages/resturant/PhotoGallery';
 import Review from './components/Review';
-import Offer from './components/Offer';
+import Offer from './components/InquireForm';
+import Fotter from './components/Fotter';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,7 +18,9 @@ const router = createBrowserRouter(
       <Route path='/menu' element={<ResturantsMenu/>}/>
       <Route path='/gallery' element={<PhotoGallery/>}/>
       <Route path='/review' element={<Review/>}/>
-      <Route path='/offer' element={<Offer/>}/>
+      <Route path='/inquire' element={<Offer/>}/>
+      <Route path='/footer' element={<Fotter/>}/>
+      
 
     </Route>
   )

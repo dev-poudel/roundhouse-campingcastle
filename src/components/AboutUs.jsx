@@ -1,48 +1,78 @@
-import React from 'react'
+import React from "react";
+import about from "../assets/about.png";
 
 const Aboutus = () => {
   return (
-    <>
-    <h1 className='text-center text-[#E1971B] font-playfair font-bold text-lg mt-6 sm:text-2xl'>About Us </h1>
-   <div className=' justify-center gap-4 mt-15 flex flex-col w-full sm:flex-row sm:px-0'>
-   <div className=' sm:w-[35rem]'><img src="./ab.png" alt="image_ab" className=' w-full sm:h-[38rem] rounded-xl object-cover p-2'/></div>
-   <div className='sm:text-left mt-6 sm:mt-16 text-center max-w-2xl'>
-    <h1 className=' font-extrabold text-2xl font-playfair sm:text-3xl leading-tight'>"Lorem ipsum dolor sit amet,<br />
-         consectetur adipisicing.</h1>
-         <p className=' mt-5 text-gray-700'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Nobis, in quia officiis accusantium inventore similique <br /> molestias.</p>
+    <div className="bg-[#f8f8f8] pb-5">
+      <div className="w-full flex justify-center max-w-[1450px] mx-auto px-6">
+        <div className="w-full">
+          <div className="flex flex-col sm:flex-row md:gap-10 gap-6 mt-15 w-full sm:px-0 mt-5">
+            {/* Image Section */}
+            <div className="sm:w-[35rem] overflow-hidden">
+              <img
+                src={about}
+                alt="image_ab"
+                className="w-full sm:h-[38rem] object-cover rounded-xl"
+              />
+            </div>
 
-          {/* Stats Section */}
-          <section className="py-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6  lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
-              {[
-                { value: '50+', label: 'Luxury Rooms' },
-                { value: '60k+', label: 'Happy Guests' },
-                { value: '99%', label: 'Satisfaction' }
-              ].map((stat, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg  text-center">
-                  <div className="text-4xl font-bold text-amber-600 mb-2">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
+            {/* Text Section */}
+            <div className="sm:text-left mt-5 text-center">
+              <h1 className=" text-[#E1971B] font-Sans font-Regular md:text-[40px] mt-6 sm:text-2xl">
+                About Us
+              </h1>
+              <h1 className="font-bold md:text-5xl font-playfair sm:text-3xl leading-tight md:pt-7 p-2">
+                "Lorem ipsum dolor sit amet,
+                <br />
+                consectetur adipisicing."
+              </h1>
+              <p className="mt-5 text-black md:text-2xl text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                <br />
+                sed do eiusmod tempor incididunt ut labore et dolore
+                <br /> magna aliqua. 
+              </p>
+
+              {/* Stats Section */}
+              <div className="">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-18 py-8">
+                  {[
+                    { value: "50+", label: "Luxury Rooms" },
+                    { value: "60k+", label: "Happy Guests" },
+                    { value: "99%", label: " Guest Satisfaction" },
+                  ].map((stat, index) => (
+                    <div key={index} className="bg-white rounded-lg">
+                      <div className="text-3xl font-regular font-playfair mb-2">
+                        {stat.value}
+                      </div>
+                      <div className="font-regular font-playfair text-3xl">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Signature Section */}
+              <div className="sm:text-left items-center font-playfair">
+                <h5 className="  Light italic text-center font-playfair text-black text-2xl">
+                  Alexey
+                </h5>
+                <h1 className="text-center text-black font-playfair">
+                  <span className="font-bold text-3xl">
+                    {" "}
+                    Alexey
+                    <span>+</span>
+                    HotelOwner
+                  </span>
+                </h1>
+              </div>
             </div>
-            </div>
-            </section>
-      <div className=' sm:text-left items-center '>
-        <h5 className=' font-semibold text-center font-playfair text-[#295757]'>Alexey</h5>
-        <h1 className=' text-center text-[#295757] font-playfair'><span className=' font-bold text-xl sm:text-2xl'>Alexey</span> + <span className=' font-bold text-2xl'>HotelOwner</span></h1>
+          </div>
+        </div>
       </div>
+    </div>
+  );
+};
 
-   </div>
-   </div>
- 
-
-
-   </>
-  )
-}
-
-export default Aboutus
-
-
-
+export default Aboutus;

@@ -11,6 +11,7 @@ import Review from './components/Review';
 import Offer from './components/InquireForm';
 import Fotter from './components/Fotter';
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
@@ -20,8 +21,6 @@ const router = createBrowserRouter(
       <Route path='/review' element={<Review/>}/>
       <Route path='/inquire' element={<Offer/>}/>
       <Route path='/footer' element={<Fotter/>}/>
-      
-
     </Route>
   )
 )

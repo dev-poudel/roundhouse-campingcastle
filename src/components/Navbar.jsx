@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className="navbar-container flex justify-between items-center py-4 bg-white shadow-md font-montserrat w-full overflow-hidden max-w-[1450px] mx-auto md:px-5 xl:px-10">
       {/* Logo and hotel name */}
-      <div className="flex items-center justify-center gap-8">
+      <div className="flex items-center justify-center gap-20">
         <div className="flex items-center xl:space-x-8 md:space-x-3 space-x-3 font-playfair">
           <img src={logo} alt="Royal Luxury Hotel Logo" className="h-21 w-21" />
           <span className="text-xl font-Open Sans">

@@ -1,6 +1,9 @@
 export default function InquiryForm() {
   return (
-    <div className="flex justify-center items-center bg-gray-100 md:pt-20 md:pb-20 pt-5 pb-5 px-5">
+    <div
+      className="flex justify-center items-center bg-gray-100 md:pt-20 md:pb-20 pt-5 pb-5 px-5"
+      id="contact"
+    >
       <div className="  w-full max-w-2xl">
         <h2 className=" md:text-4xl text-3xl font-bold text-center font-playfair text-[#E1971B] flex items-center justify-center gap-2">
           Inquire Now

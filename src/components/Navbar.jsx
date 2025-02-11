@@ -9,21 +9,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center py-4 bg-white shadow-md font-montserrat w-full overflow-hidden max-w-[1450px] mx-auto">
+    <nav className="navbar-container flex justify-between items-center py-4 bg-white shadow-md font-montserrat w-full overflow-hidden max-w-[1450px] mx-auto md:px-5 xl:px-10">
       {/* Logo and hotel name */}
-      <div className="flex items-center justify-center  gap-7">
-        <div className="flex items-center space-x-8 font-playfair">
+      <div className="flex items-center justify-center gap-8">
+        <div className="flex items-center xl:space-x-8 md:space-x-3 space-x-3 font-playfair">
           <img src={logo} alt="Royal Luxury Hotel Logo" className="h-21 w-21" />
           <span className="text-xl font-Open Sans">
-            <h3 className="font-bold text-2xl">ROUNDHOUSE</h3>
+            <h3 className="font-bold text-2xl lg:">ROUNDHOUSE</h3>
             Camping Castle
           </span>
         </div>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex space-x-10 text-xl font-bold  h-8 w-8 px-28">
+        <ul className="hidden md:flex xl:space-x-16 md:space-x-5 text-xl font-bold">
           <li>
-            <a href="#home" className="hover:text-[#2A5657] ">
+            <a href="#home" className="hover:text-[#2A5657]">
               Home
             </a>
           </li>
@@ -56,8 +56,8 @@ const Navbar = () => {
       </div>
 
       {/* Book Now button (hidden on small screens) */}
-      <div className="hidden md:block">
-        <button className="bg-[#E1971B]  text-white font-bold px-14 py-5 rounded-2xl hover:bg-[#244c4b] transition duration-200 font-Montserrat text-2xl">
+      <div className="hidden lg:block">
+        <button className="bg-[#E1971B] text-white font-bold px-14 py-5 rounded-2xl hover:bg-[#244c4b] transition duration-200 text-2xl">
           Book Now
         </button>
       </div>

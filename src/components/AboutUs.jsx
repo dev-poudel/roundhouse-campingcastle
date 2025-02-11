@@ -3,7 +3,7 @@ import about from "../assets/about.png";
 
 const Aboutus = () => {
   return (
-    <div className="bg-[#f8f8f8] pb-5">
+    <div className="bg-[#f8f8f8] pb-5" id="about">
       <div className="w-full flex justify-center max-w-[1450px] mx-auto px-6">
         <div className="w-full">
           <div className="flex flex-col sm:flex-row md:gap-10 gap-6 mt-15 w-full sm:px-0 mt-5">
@@ -17,11 +17,11 @@ const Aboutus = () => {
             </div>
 
             {/* Text Section */}
-            <div className="sm:text-left mt-5 text-center">
-              <h1 className=" text-[#E1971B] font-Sans font-Regular md:text-[40px] mt-6 sm:text-2xl">
+            <div className="sm:text-left  md:mt-5 text-center">
+              <h1 className=" text-[#E1971B] font-Sans font-Regular md:text-[40px] md:mt-6 text-4xl">
                 About Us
               </h1>
-              <h1 className="font-bold md:text-5xl font-playfair sm:text-3xl leading-tight md:pt-7 p-2">
+              <h1 className="font-bold md:text-5xl font-playfair text-4xl leading-tight md:pt-7 p-2">
                 "Lorem ipsum dolor sit amet,
                 <br />
                 consectetur adipisicing."

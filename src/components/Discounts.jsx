@@ -28,6 +28,7 @@ const Discounts = () => {
     <div
       className="bg-cover bg-center md:h-[60vh] h-auto w-full bg-no-repeat flex items-center"
       style={{ backgroundImage: `url(${discounts})` }}
+      id="offer"
     >
       <div className="text-white max-w-[1450px]px] mx-auto px-4 py-10 md:py-15 text-center">
         <div className="flex flex-col justify-center items-center space-y-2">

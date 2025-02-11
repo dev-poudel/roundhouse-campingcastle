@@ -6,7 +6,7 @@ import { CiLocationOn, CiMail } from "react-icons/ci";
 
 export default function Header() {
   return (
-    <div className="bg-[#7b2922] text-white py-3 px-5 justify-around items-center  font-sans overflow-auto hidden md:flex ">
+    <div className="bg-[#7b2922] text-white py-3 px-5 justify-around items-center  font-sans overflow-auto hidden lg:flex">
       {/* Contact Info Section */}
       <div className="flex flex-wrap items-center justify-evenly space-x-8 md:space-x-15 gap-40">
         {/* Phone Number */}

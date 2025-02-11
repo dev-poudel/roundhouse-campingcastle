@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const Room = () => {
   return (
-    <div className=" md:mt-15 mt-5">
+    <div className=" md:mt-15 mt-5 " id="rooms">
       <div className="max-w-[1450px] mx-auto md:px-6 px-3">
         <div className="flex md:justify-center md:items-center flex-col">
           <p className="font-Open Sans text-[#E1971B] text-[34px]">

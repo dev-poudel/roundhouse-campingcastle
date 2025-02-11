@@ -1,0 +1,23 @@
+html{
+    scroll-behavior: smooth;
+}
+.slick-dots li button:before {
+    font-size: 16px !important; /* Increase dot size */
+    color: #295757 !important; /* Change color */
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #295757 !important; /* Highlight active dot */
+  }
+  
+  /* Reduce the gap between slides */
+  .slick-slide {
+    margin: 0 !important; /* Remove extra gap */
+  }
+  
+/* .slick-dots{
+    bottom: 10px !important;
+} */
+.slick-dots li{
+    margin: 0 1px !important;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Corrected import
 
 const categories = [
   "All",
@@ -19,7 +20,12 @@ const galleryItems = [
 ];
 
 const PhotoGallery = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleClick = () => {
+    navigate("/bookrooms");
+  };
 
   const filteredItems =
     selectedCategory === "All"
@@ -35,6 +41,7 @@ const PhotoGallery = () => {
         <button
           className="bg-[#CECECE] border-2  border-[#2a5657] px-8 py-2 font-semibold text-xl rounded-3xl flex items-center gap-4 mt-8 
           md:mb-5 mb-2"
+          onClick={handleClick}
         >
           View All Rooms
           <FaArrowRight className="text-gray-600 font-thin" />

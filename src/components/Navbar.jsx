@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import logo from "../assets/roundlogo.png";
+import { useNavigate } from "react-router-dom"; // Make sure to import navigate
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClicked, setIsClicked] = useState(false); // Track if button is clicked
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const navigate = useNavigate(); // Hook to handle navigation
+
+  const handleBookNowClick = () => {
+    navigate("/bookrooms"); // Navigate to the 'bookrooms' page
+    setTimeout(() => setIsClicked(false), 300); // Reset the state after 300ms
+  };
   return (
     <nav className="navbar-container flex justify-between items-center py-4 bg-white shadow-md font-montserrat w-full overflow-hidden max-w-[1450px] mx-auto md:px-5 xl:px-10">
       {/* Logo and hotel name */}
@@ -57,7 +65,12 @@ const Navbar = () => {
 
       {/* Book Now button (hidden on small screens) */}
       <div className="hidden lg:block">
-        <button className="bg-[#E1971B] text-white font-bold px-14 py-5 rounded-2xl hover:bg-[#244c4b] transition duration-200 text-2xl">
+        <button
+          onClick={handleBookNowClick} // Trigger click handler
+          className={`bg-[#E1971B] text-white font-bold px-14 py-5 rounded-2xl transition duration-200 text-2xl ${
+            isClicked ? "bg-[#244c4b]" : "" // Change color when clicked
+          }`}
+        >
           Book Now
         </button>
       </div>
@@ -202,7 +215,12 @@ const Navbar = () => {
 
         {/* Book Now button inside Mobile Menu */}
         <div className="px-8">
-          <button className="w-full bg-[#E1971B] text-white font-bold px-5 py-3 rounded-2xl transition duration-200">
+          <button
+            onClick={handleBookNowClick} // Trigger click handler
+            className={`w-full bg-[#E1971B] text-white font-bold px-5 py-3 rounded-2xl transition duration-200 ${
+              isClicked ? "bg-[#244c4b]" : ""
+            }`}
+          >
             Book Now
           </button>
         </div>

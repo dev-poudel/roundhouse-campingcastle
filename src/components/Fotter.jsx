@@ -5,7 +5,7 @@ import logo from "../assets/roundlogo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#6B2620] text-white py-8">
+    <footer className="bg-[#6B2620] text-white py-8 ">
       <div className="max-w-screen-xl mx-auto px-6">
         <div className="flex flex-wrap justify-between items-start gap-6">
           {/* Logo and Description */}

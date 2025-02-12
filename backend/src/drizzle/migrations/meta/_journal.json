@@ -29,6 +29,48 @@
       "when": 1739184990034,
       "tag": "0003_far_norrin_radd",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1739254648302,
+      "tag": "0004_slow_the_renegades",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1739259340413,
+      "tag": "0005_ancient_tenebrous",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1739266210482,
+      "tag": "0006_late_surge",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1739268207104,
+      "tag": "0007_wealthy_ricochet",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1739272837363,
+      "tag": "0008_equal_solo",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1739335785397,
+      "tag": "0009_vengeful_nightmare",
+      "breakpoints": true
     }
   ]
 }

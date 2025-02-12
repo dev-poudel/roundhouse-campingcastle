@@ -1,0 +1,1 @@
+ALTER TABLE "bookings" ALTER COLUMN "bookingDate" SET DATA TYPE timestamp with time zone;

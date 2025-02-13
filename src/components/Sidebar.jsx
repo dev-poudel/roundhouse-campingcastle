@@ -22,7 +22,7 @@ const Sidebar = ({ onApply }) => {
   };
 
   return (
-    <div className="w-full md:w-64 p-5 shadow-lg h-[50vh] md:h-auto">
+    <div className="w-full md:w-64 p-5 shadow-lg h-[50vh] ">
       <div className="flex justify-between items-center shadow-md px-2 rounded-md mb-2">
         <h2 className="text-xl font-bold mb-4">Filter</h2>
         {/* Hide Reset All button on mobile */}
@@ -53,7 +53,7 @@ const Sidebar = ({ onApply }) => {
             type="checkbox"
             checked={filters.roomTypes[type]}
             onChange={() => handleCheckboxChange("roomTypes", type)}
-            className="peer w-4 h-4 rounded-md transition-all duration-200"
+            className="peer w-4 h-4 rounded-md transition-all duration-200 bg-gray-600"
           />
           {/* Label Text */}
           <span className="capitalize">{type} Room</span>

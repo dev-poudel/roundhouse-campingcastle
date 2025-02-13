@@ -13,7 +13,7 @@ export const viewStatusEnum = pgEnum("view_status", viewStatuses)
 
 export const RoomTable = pgTable("rooms", {
     id,
-    imageUrl : text().array().notNull(),
+    image : text().array().notNull(),
     description : text().notNull(),
     price : integer().notNull(),
     status :roomStatusEnum().notNull().default("Deluxe Room"),

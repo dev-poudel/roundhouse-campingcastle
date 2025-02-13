@@ -10,14 +10,14 @@ import { RoomTable } from "../drizzle/schema";
 export const createRoom = asyncHandler(async(req: Request, res: Response) => {
   try {
     // RoomSchema.parse(req.body)
-    const { imageUrl, description, price, status, viewType, capacity } = req.body;
+    const { image, description, price, status, viewType, capacity } = req.body;
 
     if ( !description || !price || !capacity) {
       return res.status(400).json({ error: "Please fill all the fields" });
     }
 
     const [room] = await db.insert(RoomTable).values({
-      imageUrl,
+      image,
       description,
       price,
       status,
@@ -65,11 +65,11 @@ export const getRoomById = asyncHandler(async(req: Request, res: Response) => {
 export const updateRoom = asyncHandler(async(req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const { imageUrl, description, price, status, viewType, capacity } = req.body;
+    const { image, description, price, status, viewType, capacity } = req.body;
 
     const [updatedRoom] = await db.update(RoomTable)
       .set({
-        imageUrl,
+        image,
         description,
         price,
         status,

@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/roundlogo.png";
+import logo from "../../assets/roundlogo.png";
 
 const SidebarDashboard = () => {
   return (
-    <div className="w-64 h-screen text-black p-5">
+    <div className="w-64 h-screen text-black p-5 ">
       {/* Logo */}
       <div className="flex items-center gap-3 mb-6">
         <img src={logo} alt="Logo" className="w-12 h-12" />
@@ -13,13 +13,14 @@ const SidebarDashboard = () => {
           <p>Camping Castle</p>
         </div>
       </div>
+      <hr />
 
       {/* Navigation Links */}
-      <nav className="flex flex-col gap-3">
+      <nav className="flex flex-col gap-3 mt-4">
         <NavLink
           to="gallery"
           className={({ isActive }) =>
-            isActive ? "text-blue-400 font-bold" : "text-black"
+            isActive ? "bg-[#D9D9D9] font-bold rounded-md p-2" : "text-black"
           }
         >
           Gallery
@@ -27,7 +28,7 @@ const SidebarDashboard = () => {
         <NavLink
           to="rooms"
           className={({ isActive }) =>
-            isActive ? "text-blue-400 font-bold" : "text-black"
+            isActive ? "bg-[#D9D9D9] font-bold rounded-md p-2" : "text-black"
           }
         >
           Rooms
@@ -35,7 +36,7 @@ const SidebarDashboard = () => {
         <NavLink
           to="customers"
           className={({ isActive }) =>
-            isActive ? "text-blue-400 font-bold" : "text-black"
+            isActive ? " bg-[#D9D9D9] font-bold rounded-md p-2" : "text-black"
           }
         >
           Customer Details
@@ -43,7 +44,7 @@ const SidebarDashboard = () => {
         <NavLink
           to="review"
           className={({ isActive }) =>
-            isActive ? "text-blue-400 font-bold" : "text-black"
+            isActive ? "bg-[#D9D9D9] font-bold rounded-md p-2" : "text-black"
           }
         >
           Review

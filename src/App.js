@@ -10,7 +10,7 @@ import Review from "./components/Review";
 import InquiryForm from "./components/InquireForm";
 import Footer from "./components/Fotter";
 import { RoomProvider } from "./context/RoomContext";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Gallery from "./components/Gallery";
 import Rooms from "./components/Rooms";
 

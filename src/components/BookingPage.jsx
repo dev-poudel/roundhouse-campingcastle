@@ -18,7 +18,6 @@ const BookingPage = () => {
     <div>
       <Header />
       <Navbar />
-      <Hero />
       <div className="flex flex-wrap md:flex-nowrap px-5 md:px-40 gap-28 mb-5 mt-10">
         {/* Sidebar: Stacked on mobile, side-by-side on larger screens */}
         <Sidebar />

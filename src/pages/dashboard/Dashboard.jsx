@@ -4,7 +4,7 @@ import SidebarDashboard from "./SidebarDashboard";
 
 const Dashboard = () => {
   return (
-    <div className="flex">
+    <div className="flex gap-10">
       {/* Sidebar */}
       <SidebarDashboard />
 

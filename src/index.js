@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import BookingPage from './components/BookingPage';
 import { RoomProvider } from './context/RoomContext';
-import Dashboard from './components/Dashboard';
+import Dashboard from './pages/dashboard/Dashboard';
 import Gallery from './components/Gallery';
 import Customerdetail from './components/Customerdetail';
 import Reviews from './components/Reviews';

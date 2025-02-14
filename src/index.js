@@ -10,6 +10,7 @@ import PhotoGallery from './pages/resturant/PhotoGallery';
 import Review from './components/Review';
 import Offer from './components/InquireForm';
 import Fotter from './components/Fotter';
+import DetailsOfYourStay from './components/DetailsOfYourStay';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,8 +21,7 @@ const router = createBrowserRouter(
       <Route path='/review' element={<Review/>}/>
       <Route path='/inquire' element={<Offer/>}/>
       <Route path='/footer' element={<Fotter/>}/>
-      
-
+      <Route path='/stay' element={<DetailsOfYourStay/>}/>
     </Route>
   )
 )

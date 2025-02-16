@@ -1,11 +1,11 @@
-import { integer, pgTable, text, timestamp, varchar } from "drizzle-orm/pg-core";
+import { integer, pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core";
 import { createdAt, updatedAt } from "../schemaHelper";
 import { UserTable } from "./user";
 import { RoomTable } from "./room";
 
 
 export const BookingTable = pgTable("bookings", {
-    id:  integer("id").primaryKey(),
+    id: serial("id").primaryKey(),
     customerName: text().notNull(),
     customerEmail: text().notNull(),
     bookingDate : timestamp({withTimezone:true}).notNull(),

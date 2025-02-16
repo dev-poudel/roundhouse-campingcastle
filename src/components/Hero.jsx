@@ -12,7 +12,6 @@ const Hero = () => {
       <div className="flex items-center justify-center h-full" id="home">
         <div className="text-white px-6 w-full max-w-[1450px]">
           <div className="flex flex-col justify-center items-start">
-            {/* First Section - Large Text with Responsive Font */}
             <div className="mb-4 text-left max-w-[90%] md:pt-30">
               <p className="font-bold text-[clamp(32px,5vw,64px)] leading-tight font-playfair">
                 WELCOME TO ROUNDHOUSE
@@ -21,7 +20,6 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Second Section - Smaller Text with Responsive Font */}
             <div className="mb-6 text-left max-w-[90%]">
               <p className="text-[clamp(18px,3vw,32px)] font-open-sans leading-relaxed">
                 “Experience your cozy stay with us “

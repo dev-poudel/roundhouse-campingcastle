@@ -37,7 +37,6 @@ function App() {
           }
         />
 
-        {/* Dashboard with Nested Routes */}
         <Route path="/dashboard/*" element={<Dashboard />}>
           <Route path="gallery" element={<Gallery />} />
           <Route path="rooms" element={<Rooms />} />

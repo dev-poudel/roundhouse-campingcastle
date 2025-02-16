@@ -31,10 +31,10 @@ const Rooms = () => {
           <h1 className="font-semibold text-2xl"> Rooms</h1>
           <p>Manage your rooms</p>
         </div>
-        <div className="flex items-center gap-2">
+        <button className="flex items-center gap-2">
           <IoMdDownload className="text-xl" />
           <p>Download</p>
-        </div>
+        </button>
       </div>
       <table
         border="1"
@@ -55,9 +55,7 @@ const Rooms = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  width="125"
-                  height="130"
-                  className="rounded-md"
+                  className="rounded-md w-[125px] h-32"
                 />
               </td>
               <td>{item.title}</td>

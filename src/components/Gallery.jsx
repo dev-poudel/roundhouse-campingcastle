@@ -1,6 +1,7 @@
 import React from "react";
 import hotel1 from "../assets/hotel1.png";
 import { IoMdDownload } from "react-icons/io";
+import Setting from "./Setting";
 const Gallery = () => {
   const gallery = [
     {
@@ -30,10 +31,10 @@ const Gallery = () => {
           <h1 className="font-semibold text-2xl">Gallery</h1>
           <p>Manage your gallery</p>
         </div>
-        <div className="flex items-center gap-2">
+        <button className="flex items-center gap-2">
           <IoMdDownload className="text-xl" />
           <p>Download</p>
-        </div>
+        </button>
       </div>
       <table
         border="1"
@@ -63,6 +64,7 @@ const Gallery = () => {
           ))}
         </tbody>
       </table>
+      <Setting />
     </div>
   );
 };

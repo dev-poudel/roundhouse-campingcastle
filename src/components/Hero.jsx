@@ -9,7 +9,7 @@ const Hero = () => {
         backgroundImage: `url(${bgImage})`,
       }}
     >
-      <div className="flex items-center justify-center h-full">
+      <div className="flex items-center justify-center h-full" id="home">
         <div className="text-white px-6 w-full max-w-[1450px]">
           <div className="flex flex-col justify-center items-start">
             {/* First Section - Large Text with Responsive Font */}

@@ -1,10 +1,12 @@
 import React from "react";
 import { IoMdDownload } from "react-icons/io";
+import Setting from "./Setting";
+import SliderButton from "./SliderButton";
 
 const styles = {
   table: {
     width: "90%",
-    borderCollapse: "collapse", // Ensures no space between borders
+    borderCollapse: "collapse",
   },
   header: {
     padding: "10px",
@@ -15,7 +17,7 @@ const styles = {
   },
   cell: {
     padding: "5px",
-    textAlign: "center", // Ensures data text is aligned to the left (can adjust if needed)
+    textAlign: "center",
     backgroundColor: "#EDF4FA",
     paddingTop: "10px",
   },
@@ -28,23 +30,31 @@ const Customers = () => {
       email: "ameya@gmail.com",
       phone: "+1 123-456-7890",
       date: "2024-02-10",
-      source: "Website",
-      status: "Active",
+      source: "Whatsapp",
+      status: "Contacted",
     },
     {
       name: "Ameya",
       email: "ameya@gmail.com",
       phone: "+1 987-654-3210",
       date: "2024-01-25",
-      source: "Referral",
-      status: "Inactive",
+      source: "facebook",
+      status: "Contacted",
     },
     {
       name: "Ameya",
       email: "ameya@gmail.com",
       phone: "+44 20 7946 0958",
       date: "2024-03-05",
-      source: "Social Media",
+      source: "Instagram",
+      status: "Pending",
+    },
+    {
+      name: "Ameya",
+      email: "ameya@gmail.com",
+      phone: "+44 20 7946 0958",
+      date: "2024-03-05",
+      source: "Instagram",
       status: "Pending",
     },
   ];
@@ -56,12 +66,13 @@ const Customers = () => {
           <h1 className="font-semibold text-2xl">Customer Detail</h1>
           <p>Manage your customer detail</p>
         </div>
-        <div className="flex items-center gap-2">
+        <button className="flex items-center gap-2">
           <IoMdDownload className="text-xl" />
           <p>Download</p>
-        </div>
+        </button>
       </div>
-      <table style={styles.table}>
+      <SliderButton />
+      <table style={styles.table} className="mt-5">
         <thead>
           <tr>
             <th style={styles.header}>Name</th>
@@ -97,6 +108,7 @@ const Customers = () => {
           ))}
         </tbody>
       </table>
+      <Setting />
     </div>
   );
 };

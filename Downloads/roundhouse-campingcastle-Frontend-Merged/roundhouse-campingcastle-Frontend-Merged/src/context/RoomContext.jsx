@@ -12,7 +12,7 @@ export const RoomProvider = ({ children }) => {
     {
       id: 1,
       image: hotel1,
-      price: 399,
+      price: 2000,
       title: "Luxury Suite",
       rating: 5.0,
       bedCount: 1,
@@ -22,7 +22,7 @@ export const RoomProvider = ({ children }) => {
     {
       id: 2,
       image: hotel2,
-      price: 299,
+      price: 1900,
       title: "Deluxe Room",
       rating: 4.8,
       bedCount: 1,
@@ -32,7 +32,7 @@ export const RoomProvider = ({ children }) => {
     {
       id: 3,
       image: hotel3,
-      price: 199,
+      price: 1500,
       title: "Standard Room",
       rating: 4.5,
       bedCount: 1,
@@ -42,7 +42,7 @@ export const RoomProvider = ({ children }) => {
     {
       id: 4,
       image: hotel3,
-      price: 199,
+      price: 1899,
       title: "Standard Room",
       rating: 4.5,
       bedCount: 1,

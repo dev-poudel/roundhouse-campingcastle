@@ -79,7 +79,7 @@ const Sidebar = ({ onApply }) => {
       </div>
 
       <button
-        onClick={() => onApply(filters)}
+        // onClick={() => onApply(filters)}
         className="bg-[#E1971B] text-white w-full py-2 mt-4 rounded-2xl font-bold transition"
       >
         Apply

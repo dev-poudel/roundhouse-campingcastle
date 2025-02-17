@@ -17,7 +17,7 @@ const Card = ({ image, price, title, rating, bedCount, bathCount, area }) => {
         <div className="flex py-2 justify-between items-centern pr-2">
           <div>
             <span className="text-[30px] font-bold text-gray-800">
-              ${price}/
+              RS{price}/
             </span>
             <span className="text-gray-600">night</span>
           </div>

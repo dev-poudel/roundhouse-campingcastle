@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Hotel Links */}
+          {/* -------Hotel Links------- */}
           <div className="w-full sm:w-auto">
             <h3 className="md:text-4xl text-2xl font-bold">Hotel</h3>
             <ul className="mt-2 space-y-1 font-thin">
@@ -100,7 +100,11 @@ const Footer = () => {
             &copy; 2023 Hotel. All Rights Reserved
           </p>
           <div className="flex space-x-4 justify-center sm:justify-start w-full sm:w-auto">
-            <a href="#" className="text-white hover:text-gray-300">
+            <a
+              href="https://www.facebook.com/share/1DqGTS3WPh/"
+              className="text-white hover:text-gray-300"
+              target="blank"
+            >
               <SlSocialFacebook size={20} />
             </a>
             <a href="#" className="text-white hover:text-gray-300">
@@ -112,5 +116,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

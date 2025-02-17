@@ -9,8 +9,9 @@ import { RoomProvider } from './context/RoomContext';
 import Dashboard from './pages/dashboard/Dashboard';
 import Gallery from './components/Gallery';
 import Customerdetail from './components/Customerdetail';
-import Reviews from './components/Reviews';
 import Rooms from './components/Rooms';
+import Reviews from './pages/dashboard/Reviews';
+import Notfound from './components/Notfound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,7 +38,7 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Catch-all Route */}
-      <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+      <Route path="*" element={<Notfound/>} />
     </>
   )
 );

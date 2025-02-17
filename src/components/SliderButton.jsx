@@ -8,7 +8,7 @@ const SliderButton = () => {
     <div className="relative flex bg-[#D2DBFA] p-2 rounded-xl w-[60vw] h-[60px] items-center justify-between">
       {/* Moving Slider */}
       <div
-        className="absolute bg-white rounded-xl shadow-md transition-all duration-300"
+        className="absolute bg-white rounded-xl shadow-md transition-all duration-300 px-1"
         style={{
           width: `${100 / options.length}%`,
           height: "90%",

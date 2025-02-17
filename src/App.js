@@ -13,6 +13,7 @@ import { RoomProvider } from "./context/RoomContext";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Gallery from "./components/Gallery";
 import Rooms from "./components/Rooms";
+import Notfound from "./components/Notfound";
 
 function App() {
   return (
@@ -25,14 +26,14 @@ function App() {
             <>
               <Header />
               <Navbar />
-              <Hero />
+               <Hero />
               <Aboutus />
               <Discounts />
               <Room />
               <PhotoGallery />
               <Review />
-              <InquiryForm />
-              <Footer />
+             <InquiryForm />
+              <Footer /> 
             </>
           }
         />
@@ -45,7 +46,7 @@ function App() {
         </Route>
 
         {/* Catch-All Route for 404 */}
-        <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+        <Route path="*" element={<Notfound/>}/>
       </Routes>
     </RoomProvider>
   );

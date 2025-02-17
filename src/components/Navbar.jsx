@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/roundlogo.png";
-import { useNavigate } from "react-router-dom"; // Make sure to import navigate
+import { Link, useNavigate } from "react-router-dom"; // Make sure to import navigate
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,20 +20,23 @@ const Navbar = () => {
     <nav className="navbar-container flex justify-between items-center py-4 bg-white shadow-md font-montserrat w-full overflow-hidden max-w-[1450px] mx-auto md:px-5 xl:px-10">
       {/* Logo and hotel name */}
       <div className="flex items-center justify-center gap-20">
-        <div className="flex items-center xl:space-x-8 md:space-x-3 space-x-3 font-playfair">
+        <Link
+          to="/"
+          className="flex items-center xl:space-x-8 md:space-x-3 space-x-3 font-playfair"
+        >
           <img src={logo} alt="Royal Luxury Hotel Logo" className="h-21 w-21" />
           <span className="text-xl font-Open Sans">
             <h3 className="font-bold text-2xl lg:">ROUNDHOUSE</h3>
             Camping Castle
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex xl:space-x-16 md:space-x-5 text-xl font-bold">
           <li>
-            <a href="#home" className="hover:text-[#2A5657]">
+            <Link to="/" href="#home" className="hover:text-[#2A5657]">
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#rooms" className="hover:text-[#2A5657]">

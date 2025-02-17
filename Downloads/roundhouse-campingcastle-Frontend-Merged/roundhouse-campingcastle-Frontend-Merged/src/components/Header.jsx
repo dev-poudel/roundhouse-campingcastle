@@ -1,4 +1,3 @@
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram } from "react-icons/fa6";
 import { FiPhoneCall } from "react-icons/fi";

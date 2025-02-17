@@ -29,36 +29,36 @@ const Footer = () => {
             <ul className="mt-2 space-y-1 font-thin">
               <div className="flex gap-5">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#home" className="hover:underline">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#about" className="hover:underline">
                     About
                   </a>
                 </li>
               </div>
               <div className="flex gap-5 ">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#rooms" className="hover:underline">
                     Rooms
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#offer" className="hover:underline">
                     Offer
                   </a>
                 </li>
               </div>
               <div className="flex gap-5">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#gallery" className="hover:underline">
                     Gallery
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#contact" className="hover:underline">
                     Contact
                   </a>
                 </li>

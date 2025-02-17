@@ -1,10 +1,15 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import bed from "../../assets/bed.png"
+import bed from "../../assets/bed.png";
 import grid from "../../assets/grid.png";
 import bath from "../../assets/bath.png";
+import { useNavigate } from "react-router";
 
 const Card = ({ image, price, title, rating, bedCount, bathCount, area }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/booking");
+  };
   return (
     <div className="shadow-lg md:pb-5 rounded-lg overflow-hidden">
       <img src={image} alt={title} className="w-full  object-cover" />
@@ -36,7 +41,10 @@ const Card = ({ image, price, title, rating, bedCount, bathCount, area }) => {
             <span>{area}/sqft</span>
           </div>
         </div>
-        <button className="bg-[#E1971B] text-white px-7 py-3 w-full rounded-3xl text-md font-semibold mt-5">
+        <button
+          className="bg-[#E1971B] text-white px-7 py-3 w-full rounded-3xl text-md font-semibold mt-5"
+          onClick={handleClick}
+        >
           Book Now
         </button>
       </div>

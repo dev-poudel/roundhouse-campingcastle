@@ -1,7 +1,7 @@
 import React from "react";
 // import hotel1 from "../assets/hotel1.png";
 import { IoMdDownload } from "react-icons/io";
-import Setting from "../../components/Setting";
+import Setting from "../../../components/Setting";
 const Gallery = () => {
   const gallery = [
     {

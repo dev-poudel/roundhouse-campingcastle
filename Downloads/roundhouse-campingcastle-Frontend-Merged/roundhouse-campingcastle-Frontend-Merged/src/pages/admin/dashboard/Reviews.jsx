@@ -1,7 +1,7 @@
 import React from "react";
 import { IoMdDownload } from "react-icons/io";
-import Setting from "../../components/Setting";
-import SliderButton from "../../components/SliderButton";
+import SliderButton from "../../../components/SliderButton";
+import Setting from "../../../components/Setting";
 
 const styles = {
   table: {
@@ -23,48 +23,44 @@ const styles = {
   },
 };
 
-const Customers = () => {
-  const customer = [
+const Reviews = () => {
+  const review = [
     {
       name: "Ameya",
       email: "ameya@gmail.com",
       phone: "+1 123-456-7890",
       date: "2024-02-10",
-      source: "Whatsapp",
-      status: "Contacted",
+      review: "Facebook",
     },
     {
       name: "Ameya",
       email: "ameya@gmail.com",
       phone: "+1 987-654-3210",
       date: "2024-01-25",
-      source: "facebook",
-      status: "Contacted",
+      review: "Facebook",
     },
     {
       name: "Ameya",
       email: "ameya@gmail.com",
       phone: "+44 20 7946 0958",
       date: "2024-03-05",
-      source: "Instagram",
-      status: "Pending",
+      review: "Facebook",
     },
     {
       name: "Ameya",
       email: "ameya@gmail.com",
       phone: "+44 20 7946 0958",
       date: "2024-03-05",
-      source: "Instagram",
-      status: "Pending",
+      review: "Facebook",
     },
   ];
 
   return (
-    <div>
+    <div className="flex-col min-h-screen">
       <div className="px-10 p-5 flex items-center justify-between">
         <div>
-          <h1 className="font-semibold text-2xl">Customer Detail</h1>
-          <p>Manage your customer detail</p>
+          <h1 className="font-semibold text-2xl">Customer Review</h1>
+          <p>Manage your customer review</p>
         </div>
         <button className="flex items-center gap-2">
           <IoMdDownload className="text-xl" />
@@ -79,38 +75,34 @@ const Customers = () => {
             <th style={styles.header}>Email</th>
             <th style={styles.header}>Phone</th>
             <th style={styles.header}>Date</th>
-            <th style={styles.header}>Source</th>
-            <th style={styles.header}>Status</th>
+            <th style={styles.header}>Review</th>
           </tr>
         </thead>
         <tbody>
-          {customer.map((customerItem, index) => (
+          {review.map((reviewItem, index) => (
             <tr key={index}>
               <td style={styles.cell} className="font-semibold ">
-                {customerItem.name}
+                {reviewItem.name}
               </td>
               <td style={styles.cell} className="font-semibold">
-                {customerItem.email}
+                {reviewItem.email}
               </td>
               <td style={styles.cell} className="font-semibold">
-                {customerItem.phone}
+                {reviewItem.phone}
               </td>
               <td style={styles.cell} className="font-semibold">
-                {customerItem.date}
+                {reviewItem.date}
               </td>
               <td style={styles.cell} className="font-semibold">
-                {customerItem.source}
-              </td>
-              <td style={styles.cell} className="font-semibold">
-                {customerItem.status}
+                {reviewItem.review}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Setting />
+      <Setting className="mt-auto" />
     </div>
   );
 };
 
-export default Customers;
+export default Reviews;

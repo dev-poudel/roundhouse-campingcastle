@@ -7,10 +7,12 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import BookingPage from './pages/resturant/booking/BookingPage';
 import { RoomProvider } from './context/RoomContext';
 import Dashboard from './pages/admin/dashboard/Dashboard';
-import Gallery from './pages/resturant/Gallery';
-import Customerdetail from './pages/user/Customerdetail';
-import Reviews from './pages/user/Review';
-import Rooms from './pages/resturant/Rooms';
+import Gallery from './pages/admin/dashboard/Gallery';
+import Rooms from './pages/admin/dashboard/Rooms';
+import Reviews from './pages/admin/dashboard/Reviews';
+import Bookings from './pages/user/Bookings';
+import Customerdetail from './pages/admin/dashboard/Customerdetail'
+import Notfound from './components/Notfound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +29,7 @@ const router = createBrowserRouter(
           </RoomProvider>
         } 
       />
+      <Route path='/booking' element={<Bookings/>}/>
 
       {/* Dashboard Route with Nested Routes */}
       <Route path='/dashboard' element={<Dashboard />}>
@@ -37,7 +40,7 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Catch-all Route */}
-      <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+      <Route path="*" element={<Notfound/>} />
     </>
   )
 );

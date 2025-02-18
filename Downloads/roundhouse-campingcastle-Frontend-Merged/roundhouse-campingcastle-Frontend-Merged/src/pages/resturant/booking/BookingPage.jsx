@@ -9,7 +9,6 @@ import Card from "../Card";
 
 const BookingPage = () => {
   const { rooms } = useRooms();
-
   if (!rooms) {
     return <p>Loading rooms...</p>;
   }

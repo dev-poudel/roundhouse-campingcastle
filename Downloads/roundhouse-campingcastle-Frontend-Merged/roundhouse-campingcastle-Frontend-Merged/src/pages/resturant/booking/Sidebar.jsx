@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Sidebar = ({ onApply }) => {
+  const [price, setPrice] = useState(50);
   const [filters, setFilters] = useState({
     roomTypes: { twin: true, single: true, double: false, family: false },
     priceRange: { min: 99, max: 1000 },
@@ -77,7 +78,19 @@ const Sidebar = ({ onApply }) => {
           className="w-20 border rounded p-1"
         />
       </div>
-
+      {/* <div className="flex flex-col items-center w-72 mx-auto mt-5">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-blue-500"
+        />
+        <div className="mt-2 text-lg font-semibold text-gray-800">
+          Price: ${price}
+        </div>
+      </div> */}
       <button
         // onClick={() => onApply(filters)}
         className="bg-[#E1971B] text-white w-full py-2 mt-4 rounded-2xl font-bold transition"

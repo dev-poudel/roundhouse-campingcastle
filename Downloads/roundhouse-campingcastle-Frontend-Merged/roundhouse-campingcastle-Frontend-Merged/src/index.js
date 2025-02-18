@@ -13,6 +13,7 @@ import Reviews from './pages/admin/dashboard/Reviews';
 import Bookings from './pages/user/Bookings';
 import Customerdetail from './pages/admin/dashboard/Customerdetail'
 import Notfound from './components/Notfound';
+import OfferEditor from './pages/admin/dashboard/OfferEditor';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
         <Route path="rooms" element={<Rooms />} />
         <Route path="customers" element={<Customerdetail/>} />
         <Route path="review" element={<Reviews />} />
+        <Route path="offer" element={<OfferEditor />} />
       </Route>
 
       {/* Catch-all Route */}

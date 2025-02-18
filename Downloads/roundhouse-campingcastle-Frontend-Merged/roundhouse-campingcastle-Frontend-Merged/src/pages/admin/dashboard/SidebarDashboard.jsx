@@ -49,6 +49,14 @@ const SidebarDashboard = () => {
         >
           Review
         </NavLink>
+        <NavLink
+          to="offer"
+          className={({ isActive }) =>
+            isActive ? "bg-[#D9D9D9] font-bold rounded-md p-2" : "text-black"
+          }
+        >
+          Offers
+        </NavLink>
       </nav>
     </div>
   );

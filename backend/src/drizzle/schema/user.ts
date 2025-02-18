@@ -1,4 +1,4 @@
-import { boolean, integer, pgEnum, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { boolean, integer, pgEnum, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 import { createdAt, id, updatedAt } from "../schemaHelper";
 
 
@@ -7,11 +7,11 @@ import { createdAt, id, updatedAt } from "../schemaHelper";
 // export const UserRoleEnum = pgEnum("user_status", UserRoles)
 
 export const UserTable = pgTable("users", {
-     id,
-    name : text().notNull(),
-    email : text().notNull(),
-    password : text().notNull(),
-    isAdmin : boolean().default(true),
+     id:serial("id").primaryKey().notNull(),
+    name : text("name").notNull(),
+    email : text("email").notNull(),
+    password : text("password").notNull(),
+    isAdmin : boolean("isAdmin").default(true),
     deletedAt : timestamp({withTimezone:true}),
     createdAt,
      updatedAt

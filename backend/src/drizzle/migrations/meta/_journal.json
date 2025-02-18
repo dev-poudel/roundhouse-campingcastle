@@ -85,6 +85,13 @@
       "when": 1739690218837,
       "tag": "0011_tidy_daimon_hellstrom",
       "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1739775469917,
+      "tag": "0012_certain_energizer",
+      "breakpoints": true
     }
   ]
 }

@@ -13,11 +13,12 @@ export const createBooking =asyncHandler(async(req: Request, res: Response) => {
     if (!customerName || !customerEmail || !bookingDate || !numberOfGuests || !phoneNumber || !userId || !roomId) {
       return res.status(400).json({error: "Please fill all the fields"});
     }
+    const parsedBookingDate = new Date(bookingDate);
 
     const [newBooking] = await db.insert(BookingTable).values({
       customerName,
       customerEmail,
-      bookingDate,
+      bookingDate: parsedBookingDate,
       numberOfGuests,
       phoneNumber,
       userId,
@@ -64,12 +65,14 @@ export const updateBooking = asyncHandler(async(req: Request, res: Response) => 
   try {
     const { id } = req.params;
     const { customerName, customerEmail, bookingDate, numberOfGuests, phoneNumber } = req.body;
+    const parsedBookingDate = new Date(bookingDate);
+
 
     const [updatedBooking] = await db.update(BookingTable)
       .set({
         customerName,
         customerEmail,
-        bookingDate,
+        bookingDate: parsedBookingDate,
         numberOfGuests,
         phoneNumber,
       })

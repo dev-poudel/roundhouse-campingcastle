@@ -16,12 +16,14 @@ import roomRoute from "./routes/roomRoute"
 import ratingRoute from "./routes/ratingRoute"
 import bookingRoute from "./routes/bookingRoute"
 import uploadRoutes from "./routes/uploadRoute"
+import galleryRoute from "./routes/galleryRoute"
 import path from "path"
 
 app.use("/api/admin", adminRoute)
 app.use("/api/room",roomRoute)
 app.use("/api/rating",ratingRoute)
 app.use("/api/booking",bookingRoute)
+app.use("/api/gallery", galleryRoute)
 app.use("/api/upload", uploadRoutes);
 app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 app.listen(PORT, ()=>{

@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { db } from "../drizzle/db";
-import { BookingTable } from "../drizzle/schema";
+import { BookingTable, RoomTable, UserTable } from "../drizzle/schema";
 import { asyncHandler } from "../middleware/asyncHandler";
 
 // Create Booking
@@ -35,7 +35,27 @@ export const createBooking =asyncHandler(async(req: Request, res: Response) => {
 // Get All Bookings
 export const getAllBookings = asyncHandler(async(req: Request, res: Response) => {
   try {
-    const bookings = await db.select().from(BookingTable);
+    const bookings = await db.select({
+      id: BookingTable.id,
+      customerName: BookingTable.customerName,
+      customerEmail:BookingTable.customerEmail,
+      bookingDate: BookingTable.bookingDate,
+      numberOfGuests: BookingTable.numberOfGuests,
+      phoneNumber: BookingTable.phoneNumber,
+      user: {
+        name : UserTable.name,
+        email : UserTable.email
+      },
+      room: {
+        booked : RoomTable.booked,
+        bookingExpired : RoomTable.bookingExpired,
+        price : RoomTable.price,
+        images : RoomTable.images
+      },
+    }).from(BookingTable)
+    .leftJoin(UserTable,eq(BookingTable.userId,UserTable.id))
+    .leftJoin(RoomTable,eq(BookingTable.roomId,RoomTable.id))
+    .orderBy(desc(BookingTable.id));
     res.status(200).json(bookings);
   } catch (error) {
     console.error(error);
@@ -47,7 +67,27 @@ export const getAllBookings = asyncHandler(async(req: Request, res: Response) =>
 export const getBookingById = asyncHandler(async(req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const booking = await db.select().from(BookingTable).where(eq(BookingTable.id, Number(id))).limit(1);
+    const booking = await db.select({
+      id: BookingTable.id,
+      customerName: BookingTable.customerName,
+      customerEmail:BookingTable.customerEmail,
+      bookingDate: BookingTable.bookingDate,
+      numberOfGuests: BookingTable.numberOfGuests,
+      phoneNumber: BookingTable.phoneNumber,
+      user: {
+        name : UserTable.name,
+        email : UserTable.email
+      },
+      room: {
+        booked : RoomTable.booked,
+        bookingExpired : RoomTable.bookingExpired,
+        price : RoomTable.price,
+        images : RoomTable.images
+      },
+    }).from(BookingTable).where(eq(BookingTable.id, Number(id))).limit(1)
+    .leftJoin(UserTable,eq(BookingTable.userId,UserTable.id))
+    .leftJoin(RoomTable,eq(BookingTable.roomId,RoomTable.id))
+    ;
 
     if (booking.length === 0) {
       return res.status(404).json({ error: "Booking not found" });

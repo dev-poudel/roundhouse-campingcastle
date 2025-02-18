@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { db } from "../drizzle/db";
-import { RatingTable } from "../drizzle/schema";
+import { RatingTable, UserTable } from "../drizzle/schema";
 import { asyncHandler } from "../middleware/asyncHandler";
 
 // Create Rating
 export const createRating =asyncHandler(async(req: Request, res: Response) => {
   try {
-    const { name, rating, comment, userId, roomId } = req.body;
+    const { name, rating, comment, userId } = req.body;
 
-    if (!name || !rating || !userId || !roomId) {
+    if (!name || !rating || !userId) {
       return res.status(400).json({ error: "Please fill all the fields" });
     }
 
@@ -18,7 +18,6 @@ export const createRating =asyncHandler(async(req: Request, res: Response) => {
       rating,
       comment,
       userId,
-      roomId,
     }).returning();
 
     res.status(201).json(newRating);
@@ -31,7 +30,18 @@ export const createRating =asyncHandler(async(req: Request, res: Response) => {
 // Get All Ratings
 export const getAllRatings = asyncHandler(async(req: Request, res: Response) => {
   try {
-    const ratings = await db.select().from(RatingTable);
+    const ratings = await db.select({
+      id:  RatingTable.id,
+      rating: RatingTable.rating,
+      comment : RatingTable.comment,
+      name: RatingTable.name,
+      user: {
+        name : UserTable.name,
+        email: UserTable.email
+      }
+    }).from(RatingTable)
+    .leftJoin(UserTable,eq(RatingTable.userId,UserTable.id))
+    .orderBy(desc(RatingTable.id))
     res.status(200).json(ratings);
   } catch (error) {
     console.error(error);
@@ -43,7 +53,17 @@ export const getAllRatings = asyncHandler(async(req: Request, res: Response) => 
 export const getRatingById = asyncHandler(async(req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const rating = await db.select().from(RatingTable).where(eq(RatingTable.id, Number(id))).limit(1);
+    const rating = await db.select({
+      id:  RatingTable.id,
+      rating: RatingTable.rating,
+      comment : RatingTable.comment,
+      name: RatingTable.name,
+      user: {
+        name : UserTable.name,
+        email: UserTable.email
+      }
+    }).from(RatingTable).where(eq(RatingTable.id, Number(id))).limit(1)
+    .leftJoin(UserTable,eq(RatingTable.userId,RatingTable.id));
 
     if (rating.length === 0) {
       return res.status(404).json({ error: "Rating not found" });

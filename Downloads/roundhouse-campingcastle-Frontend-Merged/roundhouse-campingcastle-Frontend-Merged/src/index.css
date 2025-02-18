@@ -14,7 +14,7 @@ body {
 
 @font-face {
   font-family: Playfair;
-  src: url('./PlayfairDisplay-VariableFont_wght.ttf');
+  src: url('./assets/PlayfairDisplay-VariableFont_wght.ttf');
 }
 
 .font-playfair{

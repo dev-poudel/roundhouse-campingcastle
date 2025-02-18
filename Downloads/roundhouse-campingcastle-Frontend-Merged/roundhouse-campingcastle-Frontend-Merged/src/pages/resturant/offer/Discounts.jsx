@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import discounts from "../../../assets/timer.png";
 
-// Mock data structure for offer
 const mockOfferData = {
   title: "Limited Time Holiday Sale",
   subtitle: "Only Exclusive 25% Discounts on Stays",
@@ -11,10 +10,8 @@ const mockOfferData = {
 };
 
 const Discounts = () => {
-  // State to store offer data
   const [offer, setOffer] = useState(mockOfferData);
 
-  // Calculate the time left based on targetDate
   const targetDate = new Date(offer.targetDate).getTime();
   const [timeLeft, setTimeLeft] = useState(targetDate - new Date().getTime());
 

@@ -161,13 +161,14 @@ const Navbar = () => {
         {/* Menu Links */}
         <ul className="flex flex-col space-y-6 text-lg px-8 py-10">
           <li>
-            <a
+            <Link
+              to="/"
               href="#home"
               className="hover:text-[#2A5657]"
               onClick={toggleMenu}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <a

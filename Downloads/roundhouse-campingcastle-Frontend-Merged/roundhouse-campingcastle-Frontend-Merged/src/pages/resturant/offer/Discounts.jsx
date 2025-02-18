@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from "react";
 import discounts from "../../../assets/timer.png";
 
+// Mock data structure for offer
+const mockOfferData = {
+  title: "Limited Time Holiday Sale",
+  subtitle: "Only Exclusive 25% Discounts on Stays",
+  description: "Hurry up and grab the deal!",
+  targetDate: "2025-12-31T00:00:00",
+  backgroundImage: discounts,
+};
+
 const Discounts = () => {
-  const targetDate = new Date("2025-12-31T00:00:00").getTime();
+  // State to store offer data
+  const [offer, setOffer] = useState(mockOfferData);
+
+  // Calculate the time left based on targetDate
+  const targetDate = new Date(offer.targetDate).getTime();
   const [timeLeft, setTimeLeft] = useState(targetDate - new Date().getTime());
 
+  // Effect to update the time left every second
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft(targetDate - new Date().getTime());
@@ -17,6 +31,7 @@ const Discounts = () => {
     return () => clearInterval(interval);
   }, [timeLeft, targetDate]);
 
+  // Days, hours, minutes, and seconds calculations
   const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
     (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -24,22 +39,24 @@ const Discounts = () => {
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
+  useEffect(() => {}, []);
+
   return (
     <div
       className="bg-cover bg-center md:h-[60vh] h-auto w-full bg-no-repeat flex items-center"
-      style={{ backgroundImage: `url(${discounts})` }}
+      style={{ backgroundImage: `url(${offer.backgroundImage})` }}
       id="offer"
     >
-      <div className="text-white max-w-[1450px]px] mx-auto px-4 py-10 md:py-15 text-center">
+      <div className="text-white max-w-[1450px] mx-auto px-4 py-10 md:py-15 text-center">
         <div className="flex flex-col justify-center items-center space-y-2">
           <span className="text-lg md:text-[30px] font-thin">
             Offers & Discounts
           </span>
           <h1 className="font-playfair font-bold text-2xl md:text-4xl lg:text-5xl">
-            Limited Time Holiday Sale
+            {offer.title}
           </h1>
           <p className="text-sm md:text-[30px] md:pt-2 font-Open Sans">
-            Only Exclusive 25% Discounts on Stays
+            {offer.subtitle}
           </p>
         </div>
 

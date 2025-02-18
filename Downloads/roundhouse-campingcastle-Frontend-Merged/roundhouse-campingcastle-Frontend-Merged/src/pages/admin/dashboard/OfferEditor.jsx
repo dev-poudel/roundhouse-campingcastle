@@ -1,5 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css"; // import styles
 import discounts from "../../../assets/timer.png";
+
+// Custom formats for Quill editor
+const formats = [
+  "header",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "indent",
+  "link",
+  "image",
+  "video",
+  "align",
+  "code-block",
+];
 
 const OfferEditor = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -8,6 +28,7 @@ const OfferEditor = () => {
     subtitle: "Only Exclusive 25% Discounts on Stays",
     description: "Hurry up and grab the deal!",
     backgroundImage: discounts,
+    endDate: "", // New state for the offer end date
   });
 
   // State for modal form inputs
@@ -15,6 +36,9 @@ const OfferEditor = () => {
   const [subtitle, setSubtitle] = useState(offer.subtitle);
   const [description, setDescription] = useState(offer.description);
   const [backgroundImage, setBackgroundImage] = useState(offer.backgroundImage);
+  const [endDate, setEndDate] = useState(
+    offer.endDate || new Date().toISOString().slice(0, 16)
+  ); // Set default end date to current date
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -31,6 +55,7 @@ const OfferEditor = () => {
       subtitle,
       description,
       backgroundImage,
+      endDate, // Include the end date in the offer
     };
     setOffer(updatedOffer);
     setIsModalOpen(false);
@@ -52,6 +77,12 @@ const OfferEditor = () => {
               alt="Offer Background"
               className="mt-4 max-w-[300px] h-auto"
             />
+          )}
+          {offer.endDate && (
+            <div className="mt-4">
+              <strong>Offer Ends:</strong>{" "}
+              {new Date(offer.endDate).toLocaleString()}
+            </div>
           )}
         </div>
       </div>
@@ -124,6 +155,19 @@ const OfferEditor = () => {
                     />
                   </div>
                 )}
+              </div>
+
+              {/* End Date (Quill editor) */}
+              <div className="mb-4">
+                <label className="block text-sm font-medium">
+                  Offer End Date
+                </label>
+                <input
+                  type="datetime-local"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                  className="w-full p-2 border rounded-md"
+                />
               </div>
 
               <div className="flex justify-end space-x-2">

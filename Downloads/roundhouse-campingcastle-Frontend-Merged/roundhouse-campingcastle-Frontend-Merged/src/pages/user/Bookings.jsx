@@ -9,7 +9,7 @@ const Bookings = () => {
       <Header />
       <Navbar />
       <div>
-        <div className=" relative  mx-auto">
+        <div className=" relative  mx-auto z-0">
           <img
             src="./right.png"
             alt=""

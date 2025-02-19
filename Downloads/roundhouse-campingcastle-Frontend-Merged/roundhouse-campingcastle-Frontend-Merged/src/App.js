@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Aboutus from "./components/AboutUs";
 import Discounts from "./pages/resturant/offer/Discounts";
-import Room from "./pages/resturant/Room"
+import Room from "./pages/resturant/Room";
 import PhotoGallery from "./pages/resturant/PhotoGallery";
 import Review from "./pages/user/Review";
 import InquiryForm from "./pages/user/InquireForm";
@@ -14,6 +14,8 @@ import Dashboard from "./pages/admin/dashboard/Dashboard";
 import Gallery from "./pages/admin/dashboard/Gallery";
 import Rooms from "./pages/admin/dashboard/Rooms";
 import Notfound from "./components/Notfound";
+import PrivateRoute from "./pages/admin/auth/PrivateRoute";
+import Login from "./pages/admin/auth/Login";
 
 function App() {
   return (
@@ -37,17 +39,19 @@ function App() {
             </>
           }
         />
+        {/* <Route path="/login" element={<Login />} />
 
-        {/* Dashboard with Nested Routes */}
-        <Route path="/dashboard/*" element={<Dashboard />}>
+      
+        <Route path="/dashboard/*" element={<PrivateRoute />}>
+          <Route index element={<Dashboard />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="rooms" element={<Rooms />} />
           <Route path="customers" element={<InquiryForm />} />
           <Route path="review" element={<Review />} />
-        </Route>
+        </Route> */}
 
         {/* Catch-All Route for 404 */}
-        <Route path="*" element={<Notfound/>} />
+        <Route path="*" element={<Notfound />} />
       </Routes>
     </RoomProvider>
   );

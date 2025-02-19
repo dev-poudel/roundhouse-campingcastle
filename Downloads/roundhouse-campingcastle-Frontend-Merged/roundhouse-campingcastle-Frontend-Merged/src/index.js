@@ -14,6 +14,9 @@ import Bookings from './pages/user/Bookings';
 import Customerdetail from './pages/admin/dashboard/Customerdetail'
 import Notfound from './components/Notfound';
 import OfferEditor from './pages/admin/dashboard/OfferEditor';
+import Login from './pages/admin/auth/Login';
+import Register from './pages/admin/auth/Register';
+import PrivateRoute from './pages/admin/auth/PrivateRoute';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,9 +34,11 @@ const router = createBrowserRouter(
         } 
       />
       <Route path='/booking' element={<Bookings/>}/>
-
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
       {/* Dashboard Route with Nested Routes */}
-      <Route path='/dashboard' element={<Dashboard />}>
+      <Route path='/dashboard' element={<PrivateRoute/>}>
+        <Route index element={<Dashboard />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="rooms" element={<Rooms />} />
         <Route path="customers" element={<Customerdetail/>} />

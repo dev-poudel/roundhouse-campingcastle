@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import ReactQuill from "react-quill";
+import React, { useState } from "react";
 import "react-quill/dist/quill.snow.css"; // import styles
 import discounts from "../../../assets/timer.png";
 
@@ -136,7 +135,7 @@ const OfferEditor = () => {
                 />
               </div>
 
-              {/* Background Image */}
+              {/* ---Background Image---- */}
               <div className="mb-4">
                 <label className="block text-sm font-medium">
                   Background Image

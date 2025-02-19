@@ -48,7 +48,6 @@ const Rooms = () => {
     ]);
 
     handleClose();
-
     setBannerTitle("");
     setCreatedAt("");
     setImage("");
@@ -137,7 +136,6 @@ const Rooms = () => {
           ))}
         </tbody>
       </table>
-
       <Setting />
     </div>
   );

@@ -8,7 +8,7 @@ import { eq } from "drizzle-orm";
 export const createGallery = asyncHandler(async(req:Request,res:Response)=>{
 try {
     const {image,viewType} = req.body;
-    if ( !image ) {
+    if (!image ) {
           return res.status(400).json({ error: "Please fill all the fields" });
         }
     

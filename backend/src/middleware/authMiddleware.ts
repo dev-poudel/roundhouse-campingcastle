@@ -38,7 +38,10 @@ export const isAuthenticate = asyncHandler(async (req: CustomRequest, res: Respo
 });
 
 export const isAdmin = asyncHandler(async (req: CustomRequest, res: Response, next: NextFunction) => {
-  if (req.user && req.user.isAdmin) {
+  
+  const decoded = jwt.verify(req.body.jwt, process.env.JWT_SECRET as string) as DecodedToken;
+  const [user] = await db.select().from(UserTable).where(eq(UserTable.id, decoded.userId));
+  if (user.isAdmin) {
     next();
   } else {
     res.status(401).send("Not authorized as an admin.");

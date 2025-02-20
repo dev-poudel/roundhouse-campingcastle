@@ -59,7 +59,8 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
                 generateToken(res,admin.id)
                 res.status(200).json({
                     success:true,
-                    admin
+                    admin,
+                    token: generateToken(res, admin.id)
                 })
             }else{
                 res.status(400).json({success:false, message : "Invalid admin email or password"})

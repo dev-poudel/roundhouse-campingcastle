@@ -1,0 +1,1 @@
+ALTER TABLE "rooms" ADD COLUMN "bookingExpired" timestamp with time zone;

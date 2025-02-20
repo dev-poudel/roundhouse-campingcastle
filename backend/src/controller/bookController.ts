@@ -48,6 +48,7 @@ export const getAllBookings = asyncHandler(async(req: Request, res: Response) =>
       },
       room: {
         booked : RoomTable.booked,
+        bookingExpired : RoomTable.bookingExpired,
         price : RoomTable.price,
         images : RoomTable.images
       },
@@ -79,6 +80,7 @@ export const getBookingById = asyncHandler(async(req: Request, res: Response) =>
       },
       room: {
         booked : RoomTable.booked,
+        bookingExpired : RoomTable.bookingExpired,
         price : RoomTable.price,
         images : RoomTable.images
       },

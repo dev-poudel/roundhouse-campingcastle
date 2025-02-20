@@ -7,6 +7,7 @@ export const RatingTable = pgTable("ratings",{
     name : text().notNull(),
     rating : integer().notNull(),
     comment : text(),
-      userId: integer().notNull().references(() => UserTable.id, { onDelete: "cascade" }), // Foreign Key
+    phoneNumber: text(),
+    email: text(),
 })
 

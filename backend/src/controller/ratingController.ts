@@ -7,9 +7,9 @@ import { asyncHandler } from "../middleware/asyncHandler";
 // Create Rating
 export const createRating =asyncHandler(async(req: Request, res: Response) => {
   try {
-    const { name, rating, comment, userId } = req.body;
+    const { name, rating, comment, phoneNumber, email } = req.body;
 
-    if (!name || !rating || !userId) {
+    if (!name || !rating) {
       return res.status(400).json({ error: "Please fill all the fields" });
     }
 
@@ -17,7 +17,9 @@ export const createRating =asyncHandler(async(req: Request, res: Response) => {
       name,
       rating,
       comment,
-      userId,
+      phoneNumber,
+      email
+
     }).returning();
 
     res.status(201).json(newRating);
@@ -30,17 +32,7 @@ export const createRating =asyncHandler(async(req: Request, res: Response) => {
 // Get All Ratings
 export const getAllRatings = asyncHandler(async(req: Request, res: Response) => {
   try {
-    const ratings = await db.select({
-      id:  RatingTable.id,
-      rating: RatingTable.rating,
-      comment : RatingTable.comment,
-      name: RatingTable.name,
-      user: {
-        name : UserTable.name,
-        email: UserTable.email
-      }
-    }).from(RatingTable)
-    .leftJoin(UserTable,eq(RatingTable.userId,UserTable.id))
+    const ratings = await db.select().from(RatingTable)
     .orderBy(desc(RatingTable.id))
     res.status(200).json(ratings);
   } catch (error) {
@@ -53,17 +45,7 @@ export const getAllRatings = asyncHandler(async(req: Request, res: Response) => 
 export const getRatingById = asyncHandler(async(req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const rating = await db.select({
-      id:  RatingTable.id,
-      rating: RatingTable.rating,
-      comment : RatingTable.comment,
-      name: RatingTable.name,
-      user: {
-        name : UserTable.name,
-        email: UserTable.email
-      }
-    }).from(RatingTable).where(eq(RatingTable.id, Number(id))).limit(1)
-    .leftJoin(UserTable,eq(RatingTable.userId,RatingTable.id));
+    const rating = await db.select().from(RatingTable).where(eq(RatingTable.id, Number(id))).limit(1)
 
     if (rating.length === 0) {
       return res.status(404).json({ error: "Rating not found" });

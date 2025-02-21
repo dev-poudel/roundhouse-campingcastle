@@ -6,7 +6,5 @@ export const RatingTable = pgTable("ratings",{
     name : text().notNull(),
     rating : integer().notNull(),
     comment : text(),
-    phoneNumber: text(),
-    email: text(),
 })
 

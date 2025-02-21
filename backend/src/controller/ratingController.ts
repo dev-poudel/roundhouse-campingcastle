@@ -7,7 +7,7 @@ import { asyncHandler } from "../middleware/asyncHandler";
 // Create Rating
 export const createRating =asyncHandler(async(req: Request, res: Response) => {
   try {
-    const { name, rating, comment, phoneNumber, email } = req.body;
+    const { name, rating, comment} = req.body;
 
     if (!name || !rating) {
       return res.status(400).json({ error: "Please fill all the fields" });
@@ -17,8 +17,6 @@ export const createRating =asyncHandler(async(req: Request, res: Response) => {
       name,
       rating,
       comment,
-      phoneNumber,
-      email
 
     }).returning();
 
